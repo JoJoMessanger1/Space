@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Article & Video Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MyPlatform</div>
+        <input type="text" id="searchBar" placeholder="Suche nach Artikeln oder Videos...">
+        <div id="authButtons">
+            <button id="loginBtn">Login / Register</button>
+            <button id="logoutBtn" style="display:none;">Logout</button>
+        </div>
+    </nav>
+
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <h3>Konto erstellen / Login</h3>
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Passwort">
+            <input type="text" id="username" placeholder="Dein Name (nur bei Registrierung)">
+            <textarea id="bio" placeholder="Kurze Beschreibung"></textarea>
+            <button id="submitAuth">Bestätigen</button>
+            <button onclick="document.getElementById('authModal').style.display='none'">Abbrechen</button>
+        </div>
+    </div>
+
+    <main>
+        <section id="createPost">
+            <h3>Neuen Beitrag erstellen</h3>
+            <input type="text" id="postTitle" placeholder="Titel">
+            <textarea id="postContent" placeholder="Artikelinhalt..."></textarea>
+            <input type="text" id="videoLink" placeholder="Video URL (optional)">
+            <button id="publishBtn">Veröffentlichen</button>
+        </section>
+
+        <section id="feed">
+            <h2>Dein Feed</h2>
+            <div id="followedContent"></div>
+            <hr>
+            <h2>Top Artikel</h2>
+            <div id="topArticles"></div>
+        </section>
+
+        <section id="profilePage" style="display:none;">
+            <button onclick="showHome()">Zurück zum Home</button>
+            <div id="profileHeader"></div>
+            <div id="userPosts"></div>
+        </section>
+    </main>
+
+    <script type="module" src="app.js"></script>
+</body>
+</html>
